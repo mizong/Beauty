@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ee.coding.beauty.mapper.ContentMapper">
+
+	<resultMap type="ee.coding.beauty.domain.Content"
+		id="base_result">
+		<result property="cid" column="cid" />
+		<result property="title" column="title" />
+		<result property="path" column="path" />
+		<result property="pictureCount" column="pictureCount" />
+		<result property="timestamp" column="timestamp" />
+		<result property="categoryName" column="categoryName" />
+		<result property="categorySlug" column="categorySlug" />
+		<result property="keywords" column="keywords" />
+		<result property="mdtime" column="mdtime" />
+		<result property="ymdtime" column="ymdtime" />
+		<collection property="tagList" ofType="String" column="cid"
+			select="ee.coding.beauty.mapper.MetaMapper.getTagNamesByCid" />
+	</resultMap>
+
+	<sql id="base_where">
+		<where>
+			<if test="keyword != null">
+				(
+				title like concat('%', #{keyword}, '%')
+				or
+				name like
+				concat('%', #{keyword}, '%')
+				)
+			</if>
+			<if test="categorySlug != null">
+				and slug = #{categorySlug}
+			</if>
+			<if test="currentTime != null">
+				and timestamp &lt;= #{currentTime}
+			</if>
+		</where>
+	</sql>
+
+	<insert id="save" useGeneratedKeys="true" keyProperty="cid"
+		keyColumn="cid">
+		insert into contents values(null, #{title},
+		#{path},
+		#{pictureCount},#{timestamp},#{categoryName}, #{categorySlug},
+		#{keywords},
+		#{mdtime}, #{ymdtime})
+	</insert>
+
+	<insert id="saveContentCategoryRelationship">
+		insert
+		into relationships
+		values(#{cid},#{categoryMid})
+	</insert>
+
+	<insert id="saveContentTagRelationship">
+		insert into
+		relationships values(#{cid}, #{tagMid})
+	</insert>
+
+	<delete id="delete">
+		delete from contents where cid =
+		#{cid}
+	</delete>
+
+	<update id="update">
+		update contents
+		<set>
+			<if test="title != null">
+				title = #{title},
+			</if>
+			<if test="path != null">
+				path = #{path},
+			</if>
+			<if test="pictureCount != null">
+				pictureCount = #{pictureCount},
+			</if>
+			<if test="timestamp != null">
+				timestamp = #{timestamp},
+			</if>
+			<if test="categoryName != null">
+				categoryName = #{categoryName},
+			</if>
+			<if test="categorySlug != null">
+				categorySlug = #{categorySlug},
+			</if>
+			<if test="keywords != null">
+				keywords = #{keywords},
+			</if>
+			<if test="mdtime != null">
+				mdtime = #{mdtime},
+			</if>
+			<if test="ymdtime != null">
+				ymdtime = #{ymdtime},
+			</if>
+		</set>
+		where cid = #{cid}
+	</update>
+
+	<select id="get" resultMap="base_result">
+		select * from
+		contents where cid =
+		#{cid} and timestamp &lt;= #{currentTime}
+	</select>
+
+	<select id="getListData" resultMap="base_result">
+		select
+		distinct(contents.cid),title,path,pictureCount,timestamp,categoryName,categorySlug,keywords,mdtime,ymdtime
+		from contents
+		left join
+		relationships on contents.cid =
+		relationships.cid
+		join metas on
+		metas.mid = relationships.mid
+		<include refid="base_where" />
+		order by contents.cid desc
+		limit #{beginIndex},#{pageSize}
+	</select>
+
+	<select id="getTotalCount" resultType="Integer">
+		select count(contents.cid) from contents
+		left join
+		relationships on
+		contents.cid = relationships.cid
+		join metas on
+		metas.mid =
+		relationships.mid
+		<include refid="base_where" />
+	</select>
+
+</mapper>

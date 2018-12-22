@@ -1,0 +1,44 @@
+@charset "utf-8";
+body {font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;font-size: 100%;color: #333;background-color: #F9F9F9;min-width: 320px;margin: 0;padding: 0;-webkit-text-size-adjust: none;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+img {width: 100%;height: auto;border: none;}
+i,em {font-style: normal;}
+a {color: #333;text-decoration: none;}
+a:hover {color: #0088CC;text-decoration: none;}
+ul,li,dl,p,h1,h2,input,form,textarea {font-weight: normal;margin: 0;padding: 0;list-style-type: none;}
+input,textarea {outline: none;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
+@font-face {font-family: "iconfont";src: url('/css/font/iconfont.eot');src: url('../css/font/iconfont.eot#iefix') format('embedded-opentype'),url('/static/css/font/iconfont.woff') format('woff'),url('/css/font/iconfont.ttf') format('truetype'),url('/css/font/iconfont.svg#iconfont') format('svg');}
+.icon {font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}
+.header {color: #FFF;background-color: #386DCD;background: -webkit-linear-gradient(top,#4480EB,#386DCD);height: 44px;border-bottom: 1px solid #3262B8;box-shadow: 0 1px 1px #BBB;}
+.uctop {margin-top: 26px;}
+.header span {font-size: 0.8rem;float: left;height: 44px;width: 30%;}
+.header span.open {text-align: right;float: right;}
+.header i {line-height: 44px;color: rgba(255,255,255,0.7);text-align: center;display: inline-block;height: 44px;width: 44px;text-shadow: -1px -1px 0px rgba(20,20,20,0.2);}
+.header span.login i:before {content: '\e78b';}
+.header span.open i:before {content: '\e65c';}
+.header i {line-height: 44px;color: rgba(255,255,255,0.7);text-align: center;display: inline-block;height: 44px;width: 44px;text-shadow: -1px -1px 0px rgba(20,20,20,0.2);}
+.header i:before {content: '\e679';}
+.header h1 {font-size: 1.2rem;line-height: 44px;text-align: center;text-shadow: -1px -1px 0px rgba(0,0,0,0.1);float: left;height: 44px;width: 40%;}
+.header h1 a {color: #FFF;}
+.nav {font-size: 0.8rem;height: 2rem;background: #EEE url(/static/image/line.gif) repeat-x left bottom;}
+.nav a {line-height: 2rem;text-align: center;display: inline-block;width: 20%;}
+.search {background-color: #FFF;display: none;height: 30px;margin: 10px 10px 0 10px;border: 1px solid #ECECEC;border-radius: 3px;}
+.search p {padding: 0 2px 0 10px;}
+.search input {line-height: 29px;display: inline;float: left;height: 29px;width: 88%;border: none;outline: none;}
+.search i {font-size: 0.8rem;font-style: normal;line-height: 30px;color: #999;text-align: center;float: right;height: 30px;width: 30px;}
+.search i:before {content: "\e65c";}
+.msg i {font-size: 0.8rem;color: #999;display: inline-block;margin-top: 13px;padding-left: 7px;border-left: 3px solid #4480EB;}
+.msg i.red {color: #FF0000;}
+.guestbook {font-size: 0.8rem;margin: 10px;}
+.guestbook p {margin-bottom: 10px;border: 1px solid #DDD;}
+.guestbook p.font {border: none;}
+.guestbook input.text {line-height: 30px;width: 100%;border: none;}
+.guestbook p.moretext {background-color: #FFF;}
+.guestbook p.moretext textarea {width: 100%;border: none;resize: none;}
+.guestbook p.btn {line-height: 30px;background-color: #F5F5F5;text-align: center;height: 30px;border: 1px solid #DDD;cursor: pointer;}
+.open {display: block;}
+.close {display: none;}
+.list {font-size: 0.8rem;margin: 0 10px;}
+.list p {line-height: 1.5rem;padding: 6px 0 8px 0;border-bottom: 1px dotted #DDD;}
+.list i {color: #999;}
+.list em {color: #FF0000;}

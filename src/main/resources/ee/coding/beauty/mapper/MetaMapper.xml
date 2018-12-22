@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ee.coding.beauty.mapper.MetaMapper">
+
+	<resultMap type="ee.coding.beauty.domain.Meta"
+		id="base_result">
+		<result property="mid" column="mid" />
+		<result property="name" column="name" />
+		<result property="type" column="type" />
+		<result property="slug" column="slug" />
+	</resultMap>
+
+	<insert id="save" useGeneratedKeys="true" keyColumn="mid"
+		keyProperty="mid">
+		insert into metas values(null, #{name}, #{type}, #{slug})
+	</insert>
+
+	<delete id="delete">
+		delete from metas where mid = #{mid}
+	</delete>
+
+	<update id="update">
+		update metas
+		<set>
+			<if test="name != null">
+				name = #{name},
+			</if>
+			<if test="type != null">
+				type = #{type},
+			</if>
+			<if test="slug != null">
+				slug = #{slug},
+			</if>
+		</set>
+		where mid = #{mid}
+	</update>
+
+	<select id="get" resultMap="base_result">
+		select * from metas where mid =
+		#{mid}
+	</select>
+
+	<select id="getTagNamesByCid" resultType="String">
+		select name from metas
+		where type = 'tag' and mid in (select mid from relationships where cid
+		= #{cid})
+	</select>
+
+	<select id="getByTagName" resultMap="base_result">
+		select * from metas where
+		name = #{tagName}
+	</select>
+
+	<select id="getNameBySlug" resultType="String">
+		select name from metas
+		where slug = #{categorySlug}
+	</select>
+
+	<select id="list" resultMap="base_result">
+		select * from metas
+	</select>
+
+</mapper>

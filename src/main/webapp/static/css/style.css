@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* www.idmn.net */
+body {font-family: Arial;font-size: 12px;color: #FFF;background: #252525 url(/static/image/bg.png) repeat fixed;margin: 0px;}
+img {border: none;}
+em,i {font-style: normal;}
+a {color: #333;text-decoration: none;}
+a:hover {color: #386DCD;text-decoration: none;}
+ul,dl,dt,dd,h1,h2,p,form {font-weight: normal;margin: 0px;padding: 0px;list-style-type: none;}
+li,dt,dd {display: inline;float: left;}
+.header {background: #FEFEFE url(/static/image/bg.gif) repeat-x left -61px;height: 60px;width: 656px;margin: 10px auto 0px auto;}
+.header p {color: #FFF;background: #386DCD url(/static/image/bg.gif) no-repeat -6px top;float: left;height: 60px;width: 164px;}
+.header p a,.header p em {font-family: "SimHei", Arial;font-size: 18px;color: #FFF;background: url(/static/image/bg.gif) no-repeat 88px -209px;float: left;height: 23px;width: 145px;padding: 11px 0px 0px 14px;padding-top: 13px\9;}
+.header p a:hover {color: #FAE9CF;}
+.header p span {color: #AFC5EB;float: left;height: 14px;width: 150px;padding-left: 14px;}
+.header ul {background: url(/static/image/bg.gif) no-repeat -171px top;float: right;height: 60px;width: 487px;padding-left: 5px;}
+.header li {color: #333;background: url(/static/image/bg.gif) no-repeat 79px -122px;height: 53px;width: 81px;padding-top: 5px;}
+.header li.guestbook {background: url(/static/image/bg.gif) no-repeat 76px top;width: 82px;}
+.header li a,.header li span {font-size: 14px;text-align: center;display: inline;float: left;height: 19px;height: 18px\9;width: 65px;margin-top: 13px;margin-left: 7px;padding-top: 4px;padding-top: 5px\9;transition: color 0.3s linear;}
+.header span {cursor: pointer;}
+.header li a:hover,.header li span:hover,.header li span.on {color: #999;background: url(/static/image/bg.gif) no-repeat -101px -122px;}
+.main {width: 740px;margin: 0px auto;}
+.main ul {float: left;width: 736px;}
+.main li {width: 730px;margin-top: 10px;}
+.main li.notop {margin-top: 0px;}
+.main li p {color: #FFF3CB;background: url(/static/image/bg.gif) no-repeat -3px -122px;float: left;height: 49px;width: 42px;margin-top: 12px;}
+.main li.notop p {margin-top: 0px;}
+.main li#showbox {}
+.main p em {font-size: 11px;line-height: 22px;text-align: center;float: left;height: 22px;width: 40px;margin-top: 3px;padding-left: 2px;}
+.main p a {color: #FFF3CB;float: left;height: 17px;width: 30px;padding-top: 2px;padding-top: 4px\9;padding-left: 11px;}
+.main p a:hover {color: #FFF;}
+.main dl {color: #333;background-color: #FEFEFE;float: left;width: 636px;padding: 10px 10px 0px 10px;}
+.main li.notop dl {padding-top: 0px;}
+.main dt {width: 636px;}
+.main dt img {display: block;}
+.main dd {height: 25px;height: 23px\9;width: 636px;}
+.main dd.number {height: 29px;height: 31px\9;margin-top: 10px;}
+.main dd.number span {color: #999;background: url(/static/image/bg.gif) no-repeat -46px -122px;text-align: center;float: left;height: 18px;height: 17px\9;width: 54px;padding-top: 3px;padding-top: 4px\9;}
+#showmore {background-color: #FEFEFE;display: inline;float: left;height: 100px;width: 646px;margin-left: 42px;padding: 10px 0px 0px 10px;}
+.search {background-color: #FEFEFE;display: none;float: left;width: 646px;margin-top: 10px;margin-left: 42px;padding: 10px 0px 10px 10px;}
+.searchnow {display: inline;}
+.search span.text {background: url(/static/image/bg.gif) no-repeat 568px -180px;float: left;height: 27px;width: 634px;border: 1px solid #EEE;}
+.search input {background-color: transparent;display: inline;float: left;border: none;}
+.search input.key {font-family: "Microsoft YaHei", Arial;line-height: 23px;color: #666;float: left;height: 23px;width: 550px;margin-top: 2px;margin-left: 4px;outline: none;}
+.search input.btn {color: #888;float: right;height: 25px;width: 66px;margin-top: 2px\9;cursor:pointer;}
+.search span.info {color: #666;float: left;height: 23px;width: 500px;}
+.search span.info em {color: #E69829;padding: 0px 4px;}
+.searchno {color: #888;text-align: center;float: left;height: 18px;width: 656px;margin-top: 12px;margin-left: 42px;}
+.searchno em {color: #E69829;}
+.mote {line-height: 22px;color: #666;background-color: #FEFEFE;display: inline;float: left;width: 636px;margin-top: 10px;margin-left: 42px;padding: 12px 10px 10px 10px;}
+.mote em {font-weight: bold;color: #E69829;}
+.page {background-color: #FEFEFE;text-align: center;height: 47px;width: 656px;margin: 0px auto;}
+.page {background-color: #FEFEFE;text-align: center;height: 47px;width: 656px;margin: 0px auto;}
+.page a,.page span,.page em {color: #666;background: url(/static/image/page.gif) no-repeat left -52px;text-align: center;vertical-align: top;display: inline-block;height: 20px;width: 27px;margin: 4px 5px 0px 0px;padding-top: 5px;}
+.page a.pre {background-position: left top;text-align: left;height: 18px\9;width: 42px;padding: 5px 0px 0px 16px;padding-top: 7px\9;}
+.page a.next {background-position: left -26px;text-align: left;height: 18px\9;width: 51px;padding: 5px 0px 0px 7px;padding-top: 7px\9;}
+.page a.all {background-position: -84px -52px;width: 35px;}
+.page a:hover {color: #999;background-position: -28px -52px;}
+.page a.pre:hover {background-position: -59px top;}
+.page a.next:hover {background-position: -59px -26px;}
+.page a.all:hover {background-position: -120px -52px;}
+.page em {color: #C4D3F0;background-position: -56px -52px;}
+.page span.preno {color: #BBB;background-position: -118px top;text-align: left;height: 18px\9;width: 42px;padding: 5px 0px 0px 16px;padding-top: 7px\9;}
+.page span.nextno {color: #BBB;background-position: -118px -26px;text-align: left;height: 18px\9;width: 51px;padding: 5px 0px 0px 7px;padding-top: 7px\9;}
+.page span.info {background-position: -76px -78px;height: 18px\9;width: 68px;padding-top: 7px\9;}
+.friendlink {background: #EEE url(/static/image/link.gif) no-repeat 3px 3px;height: 69px;width: 656px;margin: 10px auto;}
+.friendlink dl {float: left;height: 64px;width: 638px;padding-left: 16px;}
+.friendlink dt {font-weight: bold;color: #333;height: 22px;width: 600px;padding-top: 14px;padding-top: 16px\9;}
+.friendlink dd {font-family: "SimSun", Arial;height: 23px;width: 79px;}
+.friendlink dd.three {width: 43px;}
+.friendlink dd.four {width: 57px;}
+.friendlink dd.five {width: 67px;}
+.friendlink dd.five2 {width: 73px;}
+.friendlink dd span {color: #333;cursor: pointer;}
+.friendlink dd span:hover {color: #386DCD;}
+.footer {line-height: 24px;color: #999;text-align: center;height: 32px;width: 660px;margin: 0px auto;}
+.footerlist {line-height: 24px;color: #999;text-align: center;height: 28px;width: 660px;margin: 8px auto 2px auto;}
+.footer a,.footerlist a {color: #999;}
+.footer a:hover,.footerlist a:hover {color: #386DCD;text-decoration: none;}
